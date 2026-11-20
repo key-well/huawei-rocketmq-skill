@@ -1,0 +1,16 @@
+This is an independent, unofficial community project maintained by key-well.
+
+Installation, request adaptation, schema and runtime structure are adapted from:
+https://github.com/jkrandom-sudo/huawei-lts-skill
+Revision: 637a960753b970f5a2a2c1eb31ca89f62d4bd2bd
+MIT License, copyright (c) 2026 Huawei LTS Skill contributors.
+The complete original notice is in LTS-LICENSE.
+
+Operation names and summaries in references/operations.json are derived from:
+https://github.com/huaweicloud-samples/iaas-mcp-server
+Revision: 90837ff7658dd0fa9977daa4bf5ba5e7a6826a37
+Apache-2.0 license, see licenses/iaas-mcp-server-LICENSE.
+Changes: selected read-only operations; SDK-version routing and descriptions.
+
+Request schemas are generated from the official Huawei Cloud Python SDK.
+Huawei Cloud and product names are trademarks of their respective owners.

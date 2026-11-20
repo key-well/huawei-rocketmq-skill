@@ -1,0 +1,814 @@
+[
+  {
+    "name": "ListInstances",
+    "api_version": "v2",
+    "sdk_method": "list_instances",
+    "request_class": "ListInstancesRequest",
+    "description": "查询所有实例列表（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "engine": {
+          "type": "string",
+          "description": "**参数解释**： 消息引擎类型。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ引擎。 - reliability：RocketMQ引擎别称。 **默认取值**： 不涉及。"
+        },
+        "name": {
+          "type": "string",
+          "description": "**参数解释**： 实例名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "status": {
+          "type": "string",
+          "description": "**参数解释**： 实例状态。 **约束限制**： 不涉及。 **取值范围**： [详细状态说明请参考[实例状态说明](hrm-api-0010.xml)。](tag:hws,hws_hk,ctc,hws_eu,ocb,g42,hk_g42,tm,sbc,hk_sbc,cmcc,hk_tm,dt,ax,srg)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。](tag:hcs,fcs,hcs_oemout) **默认取值**： 不涉及。"
+        },
+        "include_failure": {
+          "type": "string",
+          "description": "**参数解释**： 是否返回创建失败的实例数。 **约束限制**： 不涉及。 **取值范围**： - &#39;true&#39;：返回创建失败的实例数。 - &#39;false&#39;：不返回创建失败的实例数。  **默认取值**： 不涉及。"
+        },
+        "exact_match_name": {
+          "type": "string",
+          "description": "**参数解释**： 是否按照实例名称进行精确匹配查询。 **约束限制**： 不涉及。 **取值范围**： - &#39;true&#39;：表示按照实例名称进行精确匹配查询。 - &#39;false&#39;：表示模糊匹配实例名称查询。  **默认取值**： &#39;false&#39;。"
+        },
+        "enterprise_project_id": {
+          "type": "string",
+          "description": "**参数解释**： 企业项目ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 当次查询返回的实例最大个数。 **约束限制**： 不涉及。 **取值范围**： 1~50。 **默认取值**： 10。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "engine"
+      ]
+    }
+  },
+  {
+    "name": "ShowInstance",
+    "api_version": "v2",
+    "sdk_method": "show_instance",
+    "request_class": "ShowInstanceRequest",
+    "description": "查询指定实例（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id"
+      ]
+    }
+  },
+  {
+    "name": "ListBrokers",
+    "api_version": "v2",
+    "sdk_method": "list_brokers",
+    "request_class": "ListBrokersRequest",
+    "description": "查询代理列表（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询，offset大于等于0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id"
+      ]
+    }
+  },
+  {
+    "name": "ShowInstanceNodes",
+    "api_version": "v2",
+    "sdk_method": "show_instance_nodes",
+    "request_class": "ShowInstanceNodesRequest",
+    "description": "查询实例节点（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "engine": {
+          "type": "string",
+          "description": "**参数解释**： 消息引擎类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 10。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询，offset大于等于0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "engine",
+        "instance_id"
+      ]
+    }
+  },
+  {
+    "name": "ShowRocketMqConfigs",
+    "api_version": "v2",
+    "sdk_method": "show_rocket_mq_configs",
+    "request_class": "ShowRocketMqConfigsRequest",
+    "description": "查询RocketMQ配置（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询，offset大于等于0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id"
+      ]
+    }
+  },
+  {
+    "name": "ListRocketInstanceTopics",
+    "api_version": "v2",
+    "sdk_method": "list_rocket_instance_topics",
+    "request_class": "ListRocketInstanceTopicsRequest",
+    "description": "查询主题列表（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 1~50。 **默认取值**： 不涉及。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id"
+      ]
+    }
+  },
+  {
+    "name": "ShowOneTopic",
+    "api_version": "v2",
+    "sdk_method": "show_one_topic",
+    "request_class": "ShowOneTopicRequest",
+    "description": "查询单个主题（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "topic": {
+          "type": "string",
+          "description": "**参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id",
+        "topic"
+      ]
+    }
+  },
+  {
+    "name": "ShowTopicStatus",
+    "api_version": "v2",
+    "sdk_method": "show_topic_status",
+    "request_class": "ShowTopicStatusRequest",
+    "description": "查询主题的消息数（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "topic": {
+          "type": "string",
+          "description": "**参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id",
+        "topic"
+      ]
+    }
+  },
+  {
+    "name": "ListConsumerGroupOfTopic",
+    "api_version": "v2",
+    "sdk_method": "list_consumer_group_of_topic",
+    "request_class": "ListConsumerGroupOfTopicRequest",
+    "description": "查询主题消费组列表（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "topic": {
+          "type": "string",
+          "description": "**参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 当次查询返回的最大个数。 **约束限制**： 不涉及。 **取值范围**： 1~50。 **默认取值**： 10。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id",
+        "topic"
+      ]
+    }
+  },
+  {
+    "name": "ListInstanceConsumerGroups",
+    "api_version": "v2",
+    "sdk_method": "list_instance_consumer_groups",
+    "request_class": "ListInstanceConsumerGroupsRequest",
+    "description": "查询消费组列表（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "group": {
+          "type": "string",
+          "description": "**参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 10。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 0。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id"
+      ]
+    }
+  },
+  {
+    "name": "ShowGroup",
+    "api_version": "v2",
+    "sdk_method": "show_group",
+    "request_class": "ShowGroupRequest",
+    "description": "查询指定消费组（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "group": {
+          "type": "string",
+          "description": "**参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id",
+        "group"
+      ]
+    }
+  },
+  {
+    "name": "ShowConsumerListOrDetails",
+    "api_version": "v2",
+    "sdk_method": "show_consumer_list_or_details",
+    "request_class": "ShowConsumerListOrDetailsRequest",
+    "description": "查询消费列表或详情（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "group": {
+          "type": "string",
+          "description": "**参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "topic": {
+          "type": "string",
+          "description": "**参数解释**： 待查询的Topic，不指定时查询Topic列表，指定时查询详情。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 当次查询返回Topic的最大个数。 **约束限制**： 不涉及。 **取值范围**： 1~50。 **默认取值**： 10。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 0。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id",
+        "group"
+      ]
+    }
+  },
+  {
+    "name": "ShowConsumerConnections",
+    "api_version": "v2",
+    "sdk_method": "show_consumer_connections",
+    "request_class": "ShowConsumerConnectionsRequest",
+    "description": "查询消费者列表（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "group": {
+          "type": "string",
+          "description": "**参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 1~50。 **默认取值**： 不涉及。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询， offset大于等于0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "is_detail": {
+          "type": "boolean",
+          "description": "**参数解释**： 是否查询消费者详细列表，参数为“true”则表示查询详细列表，否则表示查询简易列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id",
+        "group"
+      ]
+    }
+  },
+  {
+    "name": "ListTopicAccessPolicy",
+    "api_version": "v2",
+    "sdk_method": "list_topic_access_policy",
+    "request_class": "ListTopicAccessPolicyRequest",
+    "description": "查询主题的授权用户列表（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "topic": {
+          "type": "string",
+          "description": "**参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询， offset大于等于0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id",
+        "topic"
+      ]
+    }
+  },
+  {
+    "name": "ListConsumeGroupAccessPolicy",
+    "api_version": "v2",
+    "sdk_method": "list_consume_group_access_policy",
+    "request_class": "ListConsumeGroupAccessPolicyRequest",
+    "description": "查询消费组的授权用户列表（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "engine": {
+          "type": "string",
+          "description": "**参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： rocketmq。"
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "group": {
+          "type": "string",
+          "description": "**参数解释**： 消费组。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询， offset大于等于0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "engine",
+        "instance_id",
+        "group"
+      ]
+    }
+  },
+  {
+    "name": "ListRocketMqMigrationTask",
+    "api_version": "v2",
+    "sdk_method": "list_rocket_mq_migration_task",
+    "request_class": "ListRocketMqMigrationTaskRequest",
+    "description": "查询实例下所有迁移任务或查询指定迁移任务信息（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "id": {
+          "type": "string",
+          "description": "**参数解释**： 任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "type": {
+          "type": "string",
+          "description": "**参数解释**： 查询类型。 **约束限制**： 不涉及。 **取值范围**： - vhost：虚拟主机。 - exchange：交换机。 - queue：队列。 - all：所有。            **默认取值**： 不涉及。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 当前页，从1开始。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 当前页大小。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "name": {
+          "type": "string",
+          "description": "**参数解释**： vhost名称 **约束限制**： - 查询vhost列表时，该字段可为空。 - 查询exchange列表时，该字段为exchange所属vhost名称。 - 查询queue列表时，该字段为queue所属vhost-所属exchange，例vhost1-exchange1。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id"
+      ]
+    }
+  },
+  {
+    "name": "ListAvailableZones",
+    "api_version": "v2",
+    "sdk_method": "list_available_zones",
+    "request_class": "ListAvailableZonesRequest",
+    "description": "查询可用区信息（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "ListEngineProducts",
+    "api_version": "v2",
+    "sdk_method": "list_engine_products",
+    "request_class": "ListEngineProductsRequest",
+    "description": "查询产品规格列表（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "engine": {
+          "type": "string",
+          "description": "**参数解释**： 消息引擎的类型。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： rocketmq。"
+        },
+        "type": {
+          "type": "string",
+          "description": "**参数解释**： 产品类型。 **约束限制**： 不涉及。 **取值范围**： - advanced：[华为云服务类型。](tag:hws,hws_hk)[服务类型。](tag:ctc,hws_eu,ocb,g42,hk_g42,tm,sbc,hk_sbc,cmcc,hk_tm,hcs,fcs,hcs_oemout,ax,srg) [- dec：专属云服务类型。](tag:hws,hws_hk) **默认取值**： 不涉及。"
+        },
+        "product_id": {
+          "type": "string",
+          "description": "**参数解释**： RocketMQ实例规格。[x86环境后缀为.x86，arm环境为.arm。single表示单机，cluster表示集群。](tag:hcs,fcs,hcs_oemout)  **约束限制**： 不涉及。  **取值范围**： [当“type”为“single.basic”选择单机规格；当“type”为“cluster.basic”选择集群规格。](tag:dt) [- c6.2u8g.cluster.x86或c6.2u8g.cluster.arm：单个代理最大分区数50，单个代理最大消费组数100](tag:fcs) [- c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.4u16g.cluster.x86或c6.4u16g.cluster.arm：单个代理最大分区数100，单个代理最大消费组数200](tag:hcs,hcs_oemout) [- c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.8u32g.cluster.x86或c6.8u32g.cluster.arm：单个代理最大Topic数200，单个代理最大消费组数400](tag:hcs,fcs,hcs_oemout) [- c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.16u64g.cluster.x86或c6.16u64g.cluster.arm：单个代理最大Topic数300，单个代理最大消费组数600](tag:hcs,fcs,hcs_oemout) [- c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.32u128g.cluster.x86或c6.32u128g.cluster.arm：单个代理最大Topic数400，单个代理最大消费组数800](tag:hcs,fcs,hcs_oemout) [- rocketmq.b1.large.1：RocketMQ 5.x 基础版单机规格，实例TPS 500](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.b2.large.4：RocketMQ 5.x 基础版集群规格，实例TPS 2000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.b2.large.8：RocketMQ 5.x 基础版集群规格，实例TPS 4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.b2.large.12：RocketMQ 5.x 基础版集群规格，实例TPS 6000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.p1.large.1：RocketMQ 5.x 专业版单机规格，实例TPS 500](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.8：RocketMQ 5.x 专业版集群规格，实例TPS 4000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.12：RocketMQ 5.x 专业版集群规格，实例TPS 6000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.20：RocketMQ 5.x 专业版集群规格，实例TPS 10000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.40：RocketMQ 5.x 专业版集群规格，实例TPS 20000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.100：RocketMQ 5.x 专业版集群规格，实例TPS 50000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.150：RocketMQ 5.x 专业版集群规格，实例TPS 75000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.200：RocketMQ 5.x 专业版集群规格，实例TPS 100000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.300：RocketMQ 5.x 专业版集群规格，实例TPS 150000](tag:hws,hws_eu,hws_hk,ctc,srg) **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 10。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 0。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "engine"
+      ]
+    }
+  },
+  {
+    "name": "ShowRocketmqTags",
+    "api_version": "v2",
+    "sdk_method": "show_rocketmq_tags",
+    "request_class": "ShowRocketmqTagsRequest",
+    "description": "查询实例标签（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "instance_id": {
+          "type": "string",
+          "description": "**参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 10。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询，offset大于等于0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0。"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "instance_id"
+      ]
+    }
+  },
+  {
+    "name": "ShowRocketmqProjectTags",
+    "api_version": "v2",
+    "sdk_method": "show_rocketmq_project_tags",
+    "request_class": "ShowRocketmqProjectTagsRequest",
+    "description": "查询项目标签（只读查询）",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "region": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_REGION."
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overrides HUAWEI_PROJECT_ID."
+        },
+        "limit": {
+          "type": "integer",
+          "description": "**参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 10。"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "**参数解释**： 偏移量，表示从此偏移量开始查询。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 0。"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+]

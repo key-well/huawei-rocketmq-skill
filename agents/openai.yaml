@@ -1,0 +1,4 @@
+interface:
+  display_name: "Huawei RocketMQ"
+  short_description: "Read-only Huawei Cloud RocketMQ troubleshooting"
+  default_prompt: "使用 $huawei-rocketmq 查询资源状态并排查问题，先确认地域、项目和时间范围。"

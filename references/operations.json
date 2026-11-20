@@ -1,0 +1,102 @@
+[
+  {
+    "name": "ListInstances",
+    "api_version": "v2",
+    "description": "查询所有实例列表（只读查询）"
+  },
+  {
+    "name": "ShowInstance",
+    "api_version": "v2",
+    "description": "查询指定实例（只读查询）"
+  },
+  {
+    "name": "ListBrokers",
+    "api_version": "v2",
+    "description": "查询代理列表（只读查询）"
+  },
+  {
+    "name": "ShowInstanceNodes",
+    "api_version": "v2",
+    "description": "查询实例节点（只读查询）"
+  },
+  {
+    "name": "ShowRocketMqConfigs",
+    "api_version": "v2",
+    "description": "查询RocketMQ配置（只读查询）"
+  },
+  {
+    "name": "ListRocketInstanceTopics",
+    "api_version": "v2",
+    "description": "查询主题列表（只读查询）"
+  },
+  {
+    "name": "ShowOneTopic",
+    "api_version": "v2",
+    "description": "查询单个主题（只读查询）"
+  },
+  {
+    "name": "ShowTopicStatus",
+    "api_version": "v2",
+    "description": "查询主题的消息数（只读查询）"
+  },
+  {
+    "name": "ListConsumerGroupOfTopic",
+    "api_version": "v2",
+    "description": "查询主题消费组列表（只读查询）"
+  },
+  {
+    "name": "ListInstanceConsumerGroups",
+    "api_version": "v2",
+    "description": "查询消费组列表（只读查询）"
+  },
+  {
+    "name": "ShowGroup",
+    "api_version": "v2",
+    "description": "查询指定消费组（只读查询）"
+  },
+  {
+    "name": "ShowConsumerListOrDetails",
+    "api_version": "v2",
+    "description": "查询消费列表或详情（只读查询）"
+  },
+  {
+    "name": "ShowConsumerConnections",
+    "api_version": "v2",
+    "description": "查询消费者列表（只读查询）"
+  },
+  {
+    "name": "ListTopicAccessPolicy",
+    "api_version": "v2",
+    "description": "查询主题的授权用户列表（只读查询）"
+  },
+  {
+    "name": "ListConsumeGroupAccessPolicy",
+    "api_version": "v2",
+    "description": "查询消费组的授权用户列表（只读查询）"
+  },
+  {
+    "name": "ListRocketMqMigrationTask",
+    "api_version": "v2",
+    "description": "查询实例下所有迁移任务或查询指定迁移任务信息（只读查询）"
+  },
+  {
+    "name": "ListAvailableZones",
+    "api_version": "v2",
+    "description": "查询可用区信息（只读查询）"
+  },
+  {
+    "name": "ListEngineProducts",
+    "api_version": "v2",
+    "description": "查询产品规格列表（只读查询）"
+  },
+  {
+    "name": "ShowRocketmqTags",
+    "api_version": "v2",
+    "description": "查询实例标签（只读查询）"
+  },
+  {
+    "name": "ShowRocketmqProjectTags",
+    "api_version": "v2",
+    "description": "查询项目标签（只读查询）"
+  }
+]
